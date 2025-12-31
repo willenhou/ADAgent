@@ -1,26 +1,20 @@
 # ADAgent
-This is the official PyTorch implementation of ADAgent from the paper "ADAgent: LLM Agent for Alzheimer’s Disease
-Analysis with Collaborative Coordinator" accepted by MICCAI 2025 Workshop MedAgent.
+This is the official PyTorch implementation of ADAgent from the paper "ADAgent: LLM Agent for Alzheimer’s Disease Analysis with Collaborative Coordinator" accepted by MICCAI 2025 Workshop (Agentic AI for Medicine).
 
 ## Demo
 
 ## Abstract
 Alzheimer’s disease (AD) is a progressive and irreversible neurodegenerative disease. Early and precise diagnosis of AD is crucial for timely intervention and treatment planning to alleviate the progressive neurodegeneration. However, most existing methods rely on single-modality data, which contrasts with the multifaceted approach used by medical experts. While some deep learning approaches process multi-modal data, they are limited to specific tasks with a small set of input modalities and cannot handle arbitrary combinations. This highlights the need for a system that can address diverse AD-related tasks, process multi-modal or missing input, and integrate multiple advanced methods for improved performance. In this paper, we propose ADAgent, the first specialized AI agent for AD analysis, built on a large language model (LLM) to address user queries and support decision-making. ADAgent integrates a reasoning engine, specialized medical tools, and a collaborative outcome coordinator to facilitate multi-modal diagnosis and prognosis tasks in AD. Extensive experiments demonstrate that ADAgent outperforms SOTA methods, achieving significant improvements in accuracy, including a 2.7% increase in multi-modal diagnosis, a 0.7% improvement in multi-modal prognosis, and enhancements in MRI and PET diagnosis tasks.
 
-
 ## Workflow
 ![image](https://github.com/willenhou/ADAgent/blob/main/w6.png)
-
 
 ## 🔧 Tool
 
 ADAgent provides the following diagnostic tools:
-
 - **MRI Diagnosis Tool** (`MriDiagnosisTool`): Diagnose Alzheimer's disease based on MRI images
 - **PET Diagnosis Tool** (`PetDiagnosisTool`): Diagnose Alzheimer's disease based on PET images
 - **MRI+PET Combined Diagnosis Tool** (`MriPetDiagnosisTool`): Comprehensive diagnosis combining MRI and PET images
-- **DICOM Processor Tool** (`DicomProcessorTool`): Process DICOM format medical imaging files
-- **Image Visualizer Tool** (`ImageVisualizerTool`): Visualize medical images
 
 All diagnostic tools support NIFTI format (`.nii`) files. The diagnosis results provide probabilities for three stages:
 - **0**: CN (Cognitive Normal) - Cognitively normal
@@ -32,7 +26,7 @@ All diagnostic tools support NIFTI format (`.nii`) files. The diagnosis results 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/ADAgent.git
+git clone https://github.com/wlhou/ADAgent.git
 cd ADAgent
 ```
 
@@ -44,10 +38,16 @@ conda activate adagent
 pip install -e .
 ```
 
-### 2. Create Sub Virtual Environment for CmVim and nnMamba
-This is used in 
-To install mamba-ssm, please refer to Vim, which must be installed with cuda 11.8.
+### 3. Create Sub Virtual Environment for CmVim and nnMamba
 
+This is used to run CMViM and nnMamba. Please name the sub virtual enviroment as vimMamba. To install vimMamba, please refer to [Vim](https://github.com/hustvl/Vim), which must be installed with cuda 11.8. And you also need add the path of vimMamba in the file ADAgent/adagent/tools/mri_pet_diagnosis.py. For example, in my own project:
+```bash
+new_env['PATH'] = '/home/wlhou/anaconda3/envs/vimMamba/bin:' + new_env['PATH']  # 修改 PATH 环境变量
+```
+
+### 4. Download Model Weights
+
+Please download the [model weights](https://huggingface.co/Willenhou/ADAgent/tree/main) in the file ADAgent/model-weights/.
 
 ## 🚀 Usage
 
