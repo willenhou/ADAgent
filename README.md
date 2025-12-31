@@ -104,32 +104,6 @@ demo.launch(
 )
 ```
 
-## 📁 Project Structure
-
-```
-ADAgent/
-├── adagent/                 # Main package directory
-│   ├── agent/              # Intelligent agent implementation
-│   ├── tools/              # Diagnostic tools
-│   │   ├── subtools/      # Sub-tool implementations
-│   │   ├── dicom.py       # DICOM processing tool
-│   │   ├── mri_diagnosis.py
-│   │   ├── pet_diagnosis.py
-│   │   └── mri_pet_diagnosis.py
-│   ├── llava/             # LLaVA model related
-│   └── utils/             # Utility functions
-├── model-weights/          # Model weight files
-├── assets/                # Resource files
-├── data/                  # Data files
-├── logs/                  # Log files
-├── temp/                  # Temporary files
-├── main.py                # Main entry file
-├── interface.py            # Gradio interface
-├── pyproject.toml          # Project configuration and dependencies
-├── .env.example           # Environment variable template
-└── README.md              # This file
-```
-
 ## 🔍 Troubleshooting
 ### Issue 1: API Key Error
 
