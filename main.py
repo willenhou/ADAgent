@@ -15,13 +15,10 @@ from adagent.utils import *
 
 
 import os
-'''aiskt.pro'''
-#os.environ["OPENAI_API_KEY"] = 'sk-3XDOzBFPa484xS2LCb4dEf97351f4308BaDe1985FfEc2418'
-#os.environ["OPENAI_BASE_URL"]='https://pro.aiskt.com/v1'
 
 '''aiskt'''
-os.environ["OPENAI_API_KEY"] = 'sk-lPUTp51tPBBLWPPd42BbF1780eDc4aCb861140Cd86E71b3d'
-os.environ["OPENAI_BASE_URL"]='https://api.zyai.online/v1'
+os.environ["OPENAI_API_KEY"] = 'your_api_key'
+os.environ["OPENAI_BASE_URL"]='your_base_url'
 
 os.environ.get("OPENAI_API_KEY")
 os.environ.get("OPENAI_BASE_URL")
