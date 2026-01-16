@@ -93,16 +93,9 @@ if __name__ == "__main__":
     selected_tools = [
         "ImageVisualizerTool",
         "DicomProcessorTool",
-        # "ChestXRayClassifierTool",
-        # "ChestXRaySegmentationTool",
-        # "ChestXRayReportGeneratorTool",
-        #"XRayVQATool",
         "MriDiagnosisTool",
         "PetDiagnosisTool",
         "MriPetDiagnosisTool"
-        # "LlavaMedTool",
-        # "XRayPhraseGroundingTool",
-        # "ChestXRayGeneratorTool",
     ]
 
     from pathlib import Path
